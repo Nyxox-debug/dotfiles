@@ -1,0 +1,10 @@
+speed = 1.00
+visualizer = "Pulse"
+theme = "vantablack"
+repeat = "Off"
+shuffle = true
+eq_preset = "Bass Boost"
+eq = [8, 6, 4, 2, 0, 0, 0, 0, 0, 0]
+[spotify]
+client_id = "ed2b2a764999403a8a970d021beff7ce"
+bitrate   = 320
