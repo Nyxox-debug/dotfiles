@@ -1,0 +1,150 @@
+# ~/.config/yazi/theme.toml
+# Black & white theme for Yazi v26.5.6
+
+# ── App ────────────────────────────────────────────────────────────────────────
+[app]
+overall = { bg = "black" }
+
+# ── Manager ────────────────────────────────────────────────────────────────────
+[mgr]
+cwd             = { fg = "white", bold = true }
+
+find_keyword    = { fg = "white", bold = true, reversed = true }
+find_position   = { fg = "darkgray", italic = true }
+
+symlink_target  = { fg = "darkgray", italic = true }
+
+marker_copied   = { fg = "white",    bg = "darkgray" }
+marker_cut      = { fg = "black",    bg = "white"    }
+marker_marked   = { fg = "darkgray", bg = "black"    }
+marker_selected = { fg = "black",    bg = "white"    }
+
+count_copied    = { fg = "white",    bg = "darkgray", bold = true }
+count_cut       = { fg = "black",    bg = "white",    bold = true }
+count_selected  = { fg = "black",    bg = "white",    bold = true }
+
+border_symbol   = "│"
+border_style    = { fg = "darkgray" }
+
+# ── Indicator ──────────────────────────────────────────────────────────────────
+[indicator]
+parent  = { fg = "darkgray" }
+current = { fg = "white", bold = true }
+preview = { fg = "darkgray" }
+padding = { open = " ", close = " " }
+
+# ── Tabs ───────────────────────────────────────────────────────────────────────
+[tabs]
+active   = { fg = "black", bg = "white", bold = true }
+inactive = { fg = "darkgray", bg = "black" }
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = "", close = "" }
+
+# ── Mode ───────────────────────────────────────────────────────────────────────
+[mode]
+normal_main = { fg = "black", bg = "white",    bold = true }
+normal_alt  = { fg = "white", bg = "darkgray"              }
+select_main = { fg = "black", bg = "white",    bold = true }
+select_alt  = { fg = "white", bg = "darkgray"              }
+unset_main  = { fg = "black", bg = "darkgray", bold = true }
+unset_alt   = { fg = "white", bg = "black"                 }
+
+# ── Status bar ─────────────────────────────────────────────────────────────────
+[status]
+overall        = { fg = "white", bg = "black" }
+sep_left       = { open = "", close = "" }
+sep_right      = { open = "", close = "" }
+
+perm_type      = { fg = "white"    }
+perm_read      = { fg = "white"    }
+perm_write     = { fg = "darkgray" }
+perm_exec      = { fg = "white", bold = true }
+perm_sep       = { fg = "darkgray" }
+
+progress_label  = { fg = "white", bold = true }
+progress_normal = { fg = "white",    bg = "darkgray" }
+progress_error  = { fg = "black",    bg = "white"    }
+
+# ── Which-key ──────────────────────────────────────────────────────────────────
+[which]
+cols            = 3
+mask            = { bg = "black"                       }
+cand            = { fg = "white",    bold = true        }
+rest            = { fg = "darkgray"                    }
+desc            = { fg = "gray"                        }
+separator       = "  "
+separator_style = { fg = "darkgray"                    }
+
+# ── Confirm dialog ─────────────────────────────────────────────────────────────
+[confirm]
+border   = { fg = "white"                          }
+title    = { fg = "white", bold = true              }
+body     = { fg = "gray"                            }
+list     = { fg = "white"                           }
+btn_yes  = { fg = "black", bg = "white", bold = true }
+btn_no   = { fg = "white", bg = "black"              }
+btn_labels = ["[ Yes ]", "[ No ]"]
+
+# ── Spot (file info popup) ─────────────────────────────────────────────────────
+[spot]
+border   = { fg = "white"                }
+title    = { fg = "white", bold = true    }
+tbl_col  = { fg = "black", bg = "white"  }
+tbl_cell = { fg = "black", bg = "gray"   }
+
+# ── Notifications ──────────────────────────────────────────────────────────────
+[notify]
+title_info  = { fg = "white",    bold = true }
+title_warn  = { fg = "gray",     bold = true }
+title_error = { fg = "darkgray", bold = true }
+
+# ── Pick (open-with menu) ──────────────────────────────────────────────────────
+[pick]
+border   = { fg = "white"                          }
+active   = { fg = "black", bg = "white", bold = true }
+inactive = { fg = "darkgray"                        }
+
+# ── Input ──────────────────────────────────────────────────────────────────────
+[input]
+border   = { fg = "white"                          }
+title    = { fg = "white", bold = true              }
+value    = { fg = "white"                           }
+selected = { fg = "black", bg = "white"             }
+
+# ── Completion ─────────────────────────────────────────────────────────────────
+[cmp]
+border      = { fg = "darkgray"                      }
+active      = { fg = "black", bg = "white", bold = true }
+inactive    = { fg = "gray"                           }
+icon_file   = ""
+icon_folder = ""
+icon_command = ""
+
+# ── Tasks panel ────────────────────────────────────────────────────────────────
+[tasks]
+border  = { fg = "white"                          }
+title   = { fg = "white", bold = true              }
+hovered = { fg = "black", bg = "white", bold = true }
+
+# ── Help panel ─────────────────────────────────────────────────────────────────
+[help]
+on      = { fg = "white",    bold = true }
+run     = { fg = "gray"                  }
+desc    = { fg = "darkgray"              }
+hovered = { fg = "black", bg = "white", bold = true }
+footer  = { fg = "darkgray"             }
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+# ── File type colors ───────────────────────────────────────────────────────────
+[filetype]
+rules = [
+  { url = "*/",              fg = "white", bold = true  },  # directories
+  { mime = "image/*",        fg = "gray"                },  # images
+  { mime = "{audio,video}/*", fg = "gray"               },  # media
+  { mime = "inode/empty",    fg = "darkgray"            },  # empty files
+  { url = "*", is = "exec",  fg = "white", bold = true  },  # executables
+  { url = "*", is = "orphan", fg = "darkgray", crossed = true }, # broken links
+  { url = "*",               fg = "gray"                },  # everything else
+]
