@@ -1,1 +1,1 @@
-My Dotfiles
+My Dotfiles tracked using GNU stow
