@@ -61,3 +61,8 @@ time=2026-07-11T10:21:34.276+01:00 level=INFO msg="cliamp starting (version=v1.4
 time=2026-07-11T11:05:34.733+01:00 level=INFO msg="cliamp starting (version=v1.47.2 level=INFO)"
 time=2026-07-11T11:05:42.372+01:00 level=ERROR msg="spotify: stored refresh token is invalid; clearing credentials, please sign in again"
 time=2026-07-12T12:30:40.099+01:00 level=INFO msg="cliamp starting (version=v1.47.2 level=INFO)"
+time=2026-07-14T18:33:49.008+01:00 level=INFO msg="cliamp starting (version=v1.47.2 level=INFO)"
+time=2026-07-14T18:33:54.714+01:00 level=ERROR msg="spotify: stored refresh token is invalid; clearing credentials, please sign in again"
+time=2026-07-14T18:33:54.736+01:00 level=ERROR msg="spotify: stored refresh token is invalid; clearing credentials, please sign in again"
+time=2026-07-22T17:15:52.267+01:00 level=INFO msg="cliamp starting (version=v1.47.2 level=INFO)"
+time=2026-07-22T17:55:16.523+01:00 level=INFO msg="cliamp starting (version=v1.47.2 level=INFO)"

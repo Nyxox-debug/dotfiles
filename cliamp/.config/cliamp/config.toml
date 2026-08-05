@@ -1,5 +1,5 @@
 speed = 1.00
-visualizer = "Pulse"
+visualizer = "Matrix"
 theme = "vantablack"
 repeat = "Off"
 shuffle = true
