@@ -67,12 +67,6 @@ Thumbs.db
 **/*.sqlite3
 **/*.db
 
-# ─────────────────────────────────────────────
-# Thunar generated metadata
-# ─────────────────────────────────────────────
-
-Thunar/ThunarBulkRename/
-
 xarchiver/
 vlc/
 cava/
@@ -87,6 +81,10 @@ xsettingsd/
 dconf/
 spotify/
 mozilla/
+opencode/
+qutebrowser/
+pulse/
+nwg-look/
 go/
 rofi/rofi-themes-collection/
 obsidian/
