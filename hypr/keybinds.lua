@@ -46,7 +46,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(secondMod .. " + W", hl.dsp.exec_cmd(wallpaper))
 
 -- Screenshot
-hl.bind(secondMod .. " + A", hl.dsp.exec_cmd("~/.local/bin/screenshot.sh"))
+hl.bind(secondMod .. " + A", hl.dsp.exec_cmd("~/.local/bin/screenshot"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
