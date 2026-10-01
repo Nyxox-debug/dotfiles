@@ -1,0 +1,41 @@
+# ── Font & colours ────────────────────────────────
+font=Iosevka 11
+background-color=#000000
+text-color=#b4b4b4
+border-color=#444444
+progress-color=over #262626
+
+# ── Shape ─────────────────────────────────────────
+border-size=1
+border-radius=0
+padding=10,12
+width=320
+height=120
+margin=10
+
+# ── Placement ─────────────────────────────────────
+anchor=top-right
+layer=overlay
+max-visible=4
+sort=-time
+
+# ── Behaviour ─────────────────────────────────────
+icons=0
+markup=1
+actions=1
+default-timeout=5000
+format=<b>%s</b>\n%b
+
+# ── Urgency levels ────────────────────────────────
+[urgency=low]
+text-color=#808080
+border-color=#222222
+default-timeout=3000
+
+[urgency=high]
+border-color=#944242
+default-timeout=0
+
+# ── Do not disturb ────────────────────────────────
+[mode=do-not-disturb]
+invisible=1

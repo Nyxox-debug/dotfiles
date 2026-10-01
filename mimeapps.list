@@ -1,0 +1,5 @@
+[Default Applications]
+application/x-zerosize=vlc.desktop
+
+[Added Associations]
+application/x-zerosize=vlc.desktop;

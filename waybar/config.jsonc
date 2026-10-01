@@ -1,0 +1,153 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "bluetooth", "group/media"],
+    "modules-center": ["clock"],
+    "modules-right": ["group/volume", "cpu", "memory", "battery", "network"],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-disabled": "",
+        "format-connected": "󰂱 {num_connections}c",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "kitty -e bluetui",
+        "on-click-right": "rfkill toggle bluetooth"
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%A, %B %d, %Y (%I:%M %p)} 󰃰",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "first-day-of-week": 1,
+            "on-scroll": 1,
+            "format": {
+                "months":   "<span color='#fff'><b>{}</b></span>",
+                "days":     "<span color='#fff'><b>{}</b></span>",
+                "weeks":    "<span color='#fff'><b>W{}</b></span>",
+                "weekdays": "<span color='#fff'><b>{}</b></span>",
+                "today":    "<span color='#808080'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "cava": {
+        "cava_config": "/home/nyxox/.config/cava/waybar.conf",
+        "input_delay": 2,
+        "format_silent": "▁▁▁▁▁▁▁▁▁▁▁▁▁▁",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "on-click": "kitty -e cava",
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 1,
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    "group/volume": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio", "pulseaudio/slider"]
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% c",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "on-click": "kitty -e btop"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "{}% m",
+        "max-length": 10,
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G used",
+        "on-click": "kitty -e htop"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
+        "tooltip-format": "{timeTo}",
+        "on-click": "notify-send \"Battery\" \"$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E 'state|percentage|time to|energy-rate' | sed 's/^ *//')\""
+    },
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰤭 Disconnected",
+        "format-disabled": "󰀝 Off",
+        "on-click": "networkmanager_dmenu",
+        "on-click-right": "kitty -e nmtui",
+        "tooltip-format": "{ifname}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+        "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+    "group/media": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/media-animation",
+            "custom/media-now-playing",
+            "custom/media-time"
+        ]
+    },
+
+    "custom/media-now-playing": {
+        "exec": "~/.config/waybar/custom_modules/media/media-now-playing.sh",
+        "escape": true,
+        "tooltip": false,
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next"
+    },
+
+    "custom/media-animation": {
+        "exec": "~/.config/waybar/custom_modules/media/media-animation.sh",
+        "tooltip": false
+    },
+
+    "custom/media-time": {
+        "exec": "~/.config/waybar/custom_modules/media/media-time.sh",
+        "escape": true,
+        "interval": 1,
+        "tooltip": false
+    }
+}

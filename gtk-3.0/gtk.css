@@ -1,0 +1,98 @@
+/* ---------- Base ---------- */
+window, .background, dialog, messagedialog,
+.view, iconview, treeview.view, textview text,
+.sidebar, .sidebar row, paned, notebook, notebook > stack,
+headerbar, .titlebar, toolbar, statusbar, actionbar,
+menu, menubar, popover, popover.background, scrolledwindow, viewport {
+    background-color: #000000;
+    background-image: none;
+    color: #d0d0d0;
+}
+
+label { color: inherit; }
+
+/* ---------- Selection / hover ---------- */
+.view:selected, iconview:selected, treeview.view:selected,
+row:selected, .sidebar row:selected, iconview .cell:selected {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+row:hover, .sidebar row:hover, treeview.view:hover {
+    background-color: #111111;
+}
+
+/* ---------- Borders ---------- */
+headerbar, toolbar, .sidebar, statusbar, actionbar {
+    border-color: #111111;
+    box-shadow: none;
+}
+paned > separator { background-color: #111111; background-image: none; }
+
+/* ---------- Menus ---------- */
+menu, .popup menu, popover {
+    border: 1px solid #1a1a1a;
+}
+menuitem { color: #d0d0d0; }
+menuitem:hover, menuitem:selected {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+separator { background-color: #1a1a1a; }
+
+/* ---------- Buttons (incl. path bar) ---------- */
+button, button.flat, button.image-button, button.text-button {
+    background-image: none;
+    background-color: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    box-shadow: none;
+    color: #d0d0d0;
+}
+button:hover { background-color: #1a1a1a; }
+button:checked, button:active {
+    background-color: #262626;
+    color: #ffffff;
+}
+button:disabled { color: #555555; }
+
+/* ---------- Entries ---------- */
+entry, spinbutton {
+    background-color: #0a0a0a;
+    background-image: none;
+    color: #ffffff;
+    border: 1px solid #222222;
+    box-shadow: none;
+}
+entry:focus { border-color: #444444; }
+selection, entry selection, textview text selection {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* ---------- Tabs ---------- */
+notebook header { background-color: #000000; border-color: #111111; }
+notebook tab {
+    background-color: #000000;
+    background-image: none;
+    color: #888888;
+    border-color: #111111;
+}
+notebook tab:checked { background-color: #0f0f0f; color: #ffffff; }
+
+/* ---------- Scrollbars ---------- */
+scrollbar, scrollbar trough { background-color: #000000; border: none; }
+scrollbar slider { background-color: #2a2a2a; border-radius: 6px; }
+scrollbar slider:hover { background-color: #444444; }
+
+/* ---------- Tooltips ---------- */
+tooltip, tooltip.background {
+    background-color: #0a0a0a;
+    color: #d0d0d0;
+    border: 1px solid #222222;
+}
+
+/* ---------- Column headers ---------- */
+treeview header button {
+    background-color: #000000;
+    border: none;
+    border-bottom: 1px solid #111111;
+}

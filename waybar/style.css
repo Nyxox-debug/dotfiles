@@ -1,0 +1,124 @@
+@define-color highlight #ffffff;
+@define-color dark-9 rgba(0, 0, 0, 0.70);
+@define-color dark-8 rgba(17, 17, 17, 0.65);
+@define-color dark-7 rgba(28, 28, 28, 0.65);
+
+* {
+  font-family: "Iosevka", "Symbols Nerd Font", monospace;
+  font-size: 12px;
+}
+
+window#waybar {
+  background-color: @dark-9;
+  color: white;
+}
+
+#workspaces button {
+  padding: 3px 6px;
+  margin: 7px 0 7px 7px;
+  background: transparent;
+  border-radius: 2px;
+  border: none;
+  color: white;
+}
+
+#workspaces button.active {
+  background: @highlight;
+  color: black;
+  font-weight: 700;
+}
+
+#workspaces button.urgent {
+  background: rgb(227, 81, 73);
+  color: black;
+}
+
+#cava,
+#battery,
+#bluetooth,
+#cpu,
+#memory,
+#clock,
+#volume {
+  padding: 5px 8px;
+  background: @dark-8;
+  margin: 5px 10px 5px 0;
+}
+
+#cpu {
+    margin-left: 5px;
+}
+
+#cava.silent {
+  opacity: 0.4;
+}
+
+#pulseaudio-slider {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 8px;
+}
+
+#pulseaudio {
+  background: transparent;
+  padding: 0 6px 0 0;
+  margin: 0;
+}
+
+#pulseaudio-slider {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#pulseaudio-slider trough {
+  min-width: 100px;
+  min-height: 4px;
+  border-radius: 2px;
+  background: @dark-6;
+}
+
+#pulseaudio-slider highlight {
+  min-height: 4px;
+  border-radius: 2px;
+  background: @highlight;
+}
+
+#pulseaudio-slider slider {
+  min-width: 10px;
+  min-height: 10px;
+  margin: -3px 0;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  box-shadow: none;
+  background: @highlight;
+}
+
+#media {
+  color: #ffdddf;
+  margin: 7px 0px 7px 10px;
+}
+
+#custom-media-animation {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+#custom-media-now-playing {
+  margin-right: 10px;
+}
+
+#custom-media-time {
+  color: #ffdddf;
+  font-size: 10px;
+}
+
+tooltip {
+  background: @dark-9;
+  border-radius: 5px;
+}
+
+tooltip label {
+  color: white;
+}
