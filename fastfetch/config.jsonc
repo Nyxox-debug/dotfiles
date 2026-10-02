@@ -27,6 +27,7 @@
         "separator",
         "os",
         "kernel",
+        "uptime",
         "packages",
         "shell",
         "wm",
